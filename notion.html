@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Dark Mode Styles */
+    .dark-mode {
+      background-color: #222;
+      color: #fff;
+    }
+    
+    /* Light Mode Styles */
+    .light-mode {
+      background-color: #fff;
+      color: #222;
+    }
+
+    /* Transparent Button Styles */
+    #mode-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <button id="mode-toggle">🌙</button>
+
+  <script>
+    document.getElementById("mode-toggle").addEventListener("click", function() {
+      var body = document.getElementsByTagName("body")[0];
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+
+      var modeToggle = document.getElementById("mode-toggle");
+      if (body.classList.contains("dark-mode")) {
+        modeToggle.textContent = "☀️";
+      } else {
+        modeToggle.textContent = "🌙";
+      }
+    });
+  </script>
+</body>
+</html>
